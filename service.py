@@ -9,7 +9,7 @@ service = Flask(__name__)
 def unpickle():
     global trained
     global classes
-    with open('trained.pkl', 'rb') as f: trained = pickle.load(f)
+    with open('/deploy_api/trained.pkl', 'rb') as f: trained = pickle.load(f)
     classes=trained.classes_
 
 ##################
