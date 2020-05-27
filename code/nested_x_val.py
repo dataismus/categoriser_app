@@ -28,11 +28,11 @@ def model_mvp(models, X, y , n_splits=3, n_jobs=-1, score_metric="f1_macro", ran
     estimators={}
     kfold=StratifiedKFold(shuffle=True, n_splits=n_splits, random_state=random_state)
     for model in models:
-        
+
         cv=cross_validate(model, X,y, cv=kfold, scoring=score_metric, return_train_score=True, return_estimator=True)
         train_score=np.mean(cv['train_score'])
         test_score =np.mean(cv['test_score'])
-        
+
         print('{:>56}'.format('train vs. test'))
         print(score_metric+' of default {:>20}: {:>5.2f}     {:>4.2f}'.format(type(model).__name__, train_score, test_score))
         estimators[type(model).__name__]=cv["estimator"][0]

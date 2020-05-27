@@ -1,9 +1,8 @@
     1  conda install -c conda-forge spacy
     2  conda install -c conda-forge nltk
-    4  pip install textblob-de
+    4  pip install textblob textblob-de
     5  python3 -m spacy download de_core_news_sm
     6  conda install -c conda-forge google-cloud-bigquery
-    7  conda install -c conda-forge pickle
    10  pip install google-cloud-bigquery
    11  pip install google-cloud-datastore
    12  pip install pyasn1-modules
